@@ -60,6 +60,17 @@ python manage.py migrate
 9. Unggah proyek ke repositori GitHub dengan nama salmathlon dan membuat berkas `.gitignore` untuk konfigurasi yang digunakan dalam repositori Git
 10. Membuat aplikasi di Adaptable bernama salmathlon dan menyambungkannya dengan GitHub
 
+### Bagan Request Client dan Respon
+1. Client membuat HTTP request ke URL tertentu di aplikasi Django
+2. Aplikasi Django menerima Request
+3. Aplikasi Django akan mencocokkan URL yang diterima dengan pola yang didefinisikan dalam berkas urls.py
+4. Setelah cocok dengan pola yang didefinisikan di urls.py, Django akan mengarahkan request ke fungsi view yang sesuai
+5. Fungsi view (dalam views.py) yang sesuai akan dijalankan untuk menangani request. View dapat berinteraksi dengan model yang didefinisikan dalam models.py. Fungsi ini berisi logika bisnis, pengolahan data, dan persiapan respon. 
+6. Setelah selesai memproses request, view akan mengembalikan respon ke template HTM untuk menghasilkan respon HTML yang akan dikirim kembali ke client
+7. Template HTML menggabungkan data yang diterima view dengan HTML dan menghasilkan halaman web yang akan ditampilkan kepada client
+8. Aplikasi Django mengirimkan respon HTML yang dihasilkan bersama dengan header HTTP ke client
+9. Client menerima respon dan menampikan halaman web kepada pengguna
+
 ### Penggunaan Virtual Environment
 Virtual environment digunakan untuk mengisolasi package serta dependencies dari proyek yang berbeda yang ada di komputer sehingga tidak bertabrakan dengan versi lain yang ada. Kita dapat tetap membuat aplikasi web berbasis Django tanpa menggunakan _virtual environment_ jika hanya dilakukan di dalam lingkungan local server. Pengguna dapat hanya dengan menggunakan environment Python bawaan dari komputer (root) untuk menginstal dependensi yang dibutuhkan proyek Django sehingga proyek Django dapat berjalan di server "local". Namun, jika untuk dijalankan di online hoster hal ini cukup susah dilakukan karena server host akan mencari daftar dependensi yang ada di dalam "requirements.txt" untuk disesuaikan dengan paket dependensi yang dimiliki mesin hosting. Jika "requirements.txt" tidak ada karena tidak diinisialisasikan virtual environmentnya, maka mesin host tidak pernah tahu dependensi apa saja yang diperlukan untuk menjalankan server sehingga proyek juga tidak akan berjalan.
 
@@ -86,6 +97,7 @@ View: Menentukan tampilan antarmuka pengguna.
 Controller: Menghubungkan serta mengatur model dan view agar dapat saling terhubung
 
 **MVVM**
+
 Konsep MVVM adalah konsep arsitektur yang digunakan untuk pengembangan aplikasi yang berfokus pada pemisahan antara kode untuk logina bisnis dan tampilan aplikasi. MVVM terdiri dari beberapa layer, yaitu Model-View-ViewModel.
 
 Model: Merepresentasikan data yang akan digunakan pada logika bisnis.
