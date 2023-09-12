@@ -85,6 +85,8 @@ View: Menampilkan data dari model dan menghubungkannya dengan template.
 
 Template: Menentukan tampilan antarmuka pengguna.
 
+Dalam MVT, View yang menjembatani antara data yang akan diambil dalam Model dan akan ditampiljan di Template.
+
 **MVC**
 
 Konsep MVC adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk  memisahkan komponen utama sebuah aplikasi menjadi tiga bagian, yaitu Model-View-Controller.
@@ -95,6 +97,8 @@ View: Menentukan tampilan antarmuka pengguna.
 
 Controller: Menghubungkan serta mengatur model dan view agar dapat saling terhubung.
 
+Perbedaan utama dengan MVC adalah bahwa Controller bertindak sebagai perantara antara Model dan View. Ketika pengguna berinteraksi dengan View, Controller mengambil tindakan yang sesuai dan memperbarui Model atau View sesuai kebutuhan.
+
 **MVVM**
 
 Konsep MVVM adalah konsep arsitektur yang digunakan untuk pengembangan aplikasi yang berfokus pada pemisahan antara kode untuk logina bisnis dan tampilan aplikasi. MVVM terdiri dari beberapa layer, yaitu Model-View-ViewModel.
@@ -104,6 +108,8 @@ Model: Merepresentasikan data yang akan digunakan pada logika bisnis.
 View: Berisi antarmuka pengguna dari aplikasi untuk mengatur bagaimana informasi akan ditampilkan.
 
 ViewModel: Bertugas untuk berinteraksi dengan model di mana data yang ada akan diteruskan ke layer view.
+
+Perbedaan utama dengan MVVM adalah peran ViewModel yang kuat dalam mengatur interaksi antara Model dan View. ViewModel berfungsi sebagai jembatan antara Model dan View, sehingga View tidak perlu memiliki pengetahuan tentang Model.
 
 
 
