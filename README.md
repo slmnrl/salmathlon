@@ -26,7 +26,7 @@ django-admin startproject salmathlon .
 Setelah membuat proyek, tambahkan host yang diizinkan untuk mengakses aplikasi web agar aplikasi dapat diakses secara luas
 
 
-3. Buat aplikasi main pada proyek `salmathlon` dengan perintah
+3. Buat aplikasi bernama main pada proyek `salmathlon` dengan perintah
  ```
 python manage.py startapp main
  ``` 
