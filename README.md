@@ -65,6 +65,36 @@ Virtual environment digunakan untuk mengisolasi package serta dependencies dari 
 
 ### MVC, MVT, MVVM
 
+**MVT**
+
+Konsep MVT adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk  memisahkan komponen utama sebuah aplikasi menjadi tiga bagian, yaitu Model-View-Template
+
+Model: Menyimpan data dan logika aplikasi.
+
+View: Menampilkan data dari model dan menghubungkannya dengan template.
+
+Template: Menentukan tampilan antarmuka pengguna.
+
+**MVC**
+
+Konsep MVC adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk  memisahkan komponen utama sebuah aplikasi menjadi tiga bagian, yaitu Model-View-Controller.
+
+Model: Menyiapkkan, mengatur, memanipulasi dan mengorganisasikan data yang ada di basis data
+
+View: Menentukan tampilan antarmuka pengguna.
+
+Controller: Menghubungkan serta mengatur model dan view agar dapat saling terhubung
+
+**MVVM**
+Konsep MVVM adalah konsep arsitektur yang digunakan untuk pengembangan aplikasi yang berfokus pada pemisahan antara kode untuk logina bisnis dan tampilan aplikasi. MVVM terdiri dari beberapa layer, yaitu Model-View-ViewModel.
+
+Model: Merepresentasikan data yang akan digunakan pada logika bisnis.
+
+View: Berisi antarmuka pengguna dari aplikasi untuk mengatur bagaimana informasi akan ditampilkan.
+
+ViewModel: Bertugas untuk berinteraksi dengan model di mana data yang ada akan diteruskan ke layer view.
+
+
 
 
 
