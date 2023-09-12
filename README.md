@@ -10,8 +10,9 @@ Link: https://salmathlon.adaptable.app/main/
 
 
 
-### Implementasi Proyek
-1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda.Dependencies dapat disiapkan dalam file requirements.txt berikut
+## Implementasi Proyek
+1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda. Dependencies dapat disiapkan dalam file requirements.txt berikut <img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/00f4c70a-556e-4e73-bdc3-c35acf02d45f">
+
 
 Kemudian, pasang dependencies yang telah disiapkan dengan perintah
 ```
@@ -31,9 +32,11 @@ python manage.py startapp main
  ``` 
 Setelah aplikasi main dibuat, tambahkan `main` ke daftar aplikasi yang ada dalam direktori proyek salmathlon agar aplikasi dapat dijalankan.
 
-4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut
+4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut <img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/d5300457-03f0-447a-8223-66e40ed2fc15">
 
-5. Membuat model sebagai berikut
+
+5. Membuat model sebagai berikut <img width="373" alt="Screenshot 2023-09-12 120759" src="https://github.com/slmnrl/salmathlon/assets/124946381/dcffd4cf-a2c1-46af-b3ff-06df809eb42f">
+
 
 Nama model yang didefinisikan adalah Product dengan atribut `name`, `amount`, dan `description`.
 Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah struktur tabel basis data yang sesuai dengan perintah
@@ -42,16 +45,19 @@ Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah strukt
 python manage.py makemigrations
 python manage.py migrate
 ```
-6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html
+6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html <img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/6b9a0225-84cb-4399-8915-3afea53f06d0">
 
-7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`
 
-8. Konfigurasi routing url proyek
+7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`<img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/caa3750f-9d3a-4495-8642-7f9a3d1530e9">
+
+
+8. Konfigurasi routing url proyek <img width="324" alt="Screenshot 2023-09-12 121935" src="https://github.com/slmnrl/salmathlon/assets/124946381/eec43013-7a1e-4435-b990-de8d8a8cce89">
+
 
 9. Unggah proyek ke repositori GitHub dengan nama salmathlon dan membuat berkas `.gitignore` untuk konfigurasi yang digunakan dalam repositori Git
 10. Membuat aplikasi di Adaptable bernama salmathlon dan menyambungkannya dengan GitHub
 
-### Bagan Request Client dan Respon
+## Bagan Request Client dan Respon
 ![bagan](https://github.com/slmnrl/salmathlon/assets/124946381/e3b206a9-bd8a-4920-9bd1-7f8e9f5680ab)
 1. Client membuat HTTP request ke URL tertentu di aplikasi Django
 2. Aplikasi Django menerima Request
@@ -63,14 +69,15 @@ python manage.py migrate
 8. Aplikasi Django mengirimkan respon HTML yang dihasilkan bersama dengan header HTTP ke client
 9. Client menerima respon dan menampikan halaman web kepada pengguna
 
-### Penggunaan Virtual Environment
-Virtual environment digunakan untuk mengisolasi package serta dependencies dari proyek yang berbeda yang ada di komputer sehingga tidak bertabrakan dengan versi lain yang ada. Kita dapat tetap membuat aplikasi web berbasis Django tanpa menggunakan _virtual environment_ jika hanya dilakukan di dalam lingkungan local server. Pengguna dapat hanya dengan menggunakan environment Python bawaan dari komputer (root) untuk menginstal dependensi yang dibutuhkan proyek Django sehingga proyek Django dapat berjalan di server "local". Namun, jika untuk dijalankan di online hoster hal ini cukup susah dilakukan karena server host akan mencari daftar dependensi yang ada di dalam "requirements.txt" untuk disesuaikan dengan paket dependensi yang dimiliki mesin hosting. Jika "requirements.txt" tidak ada karena tidak diinisialisasikan virtual environmentnya, maka mesin host tidak pernah tahu dependensi apa saja yang diperlukan untuk menjalankan server sehingga proyek juga tidak akan berjalan.
 
-### MVC, MVT, MVVM
+## Penggunaan Virtual Environment
+Virtual environment digunakan untuk mengisolasi package serta dependencies dari proyek yang berbeda yang ada di komputer sehingga tidak bertabrakan dengan versi lain yang ada. Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan _virtual environment_ jika hanya dilakukan di dalam lingkungan local server. Pengguna dapat hanya dengan menggunakan environment Python bawaan dari komputer (root) untuk menginstal dependensi yang dibutuhkan proyek Django sehingga proyek Django dapat berjalan di server "local". Namun, jika untuk dijalankan di online hoster hal ini cukup susah dilakukan karena server host akan mencari daftar dependensi yang ada di dalam "requirements.txt" untuk disesuaikan dengan paket dependensi yang dimiliki mesin hosting. Jika "requirements.txt" tidak ada karena tidak diinisialisasikan virtual environmentnya, maka mesin host tidak pernah tahu dependensi apa saja yang diperlukan untuk menjalankan server sehingga proyek juga tidak akan berjalan.
+
+## MVC, MVT, MVVM
 
 **MVT**
 
-Konsep MVT adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk  memisahkan komponen utama sebuah aplikasi menjadi tiga bagian, yaitu Model-View-Template
+Konsep MVT adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk  memisahkan komponen utama sebuah aplikasi menjadi tiga bagian, yaitu Model-View-Template.
 
 Model: Menyimpan data dan logika aplikasi.
 
@@ -82,11 +89,11 @@ Template: Menentukan tampilan antarmuka pengguna.
 
 Konsep MVC adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk  memisahkan komponen utama sebuah aplikasi menjadi tiga bagian, yaitu Model-View-Controller.
 
-Model: Menyiapkkan, mengatur, memanipulasi dan mengorganisasikan data yang ada di basis data
+Model: Menyiapkkan, mengatur, memanipulasi dan mengorganisasikan data yang ada di basis data.
 
 View: Menentukan tampilan antarmuka pengguna.
 
-Controller: Menghubungkan serta mengatur model dan view agar dapat saling terhubung
+Controller: Menghubungkan serta mengatur model dan view agar dapat saling terhubung.
 
 **MVVM**
 
