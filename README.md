@@ -91,7 +91,7 @@ View: Menampilkan data dari model dan menghubungkannya dengan template.
 
 Template: Menentukan tampilan antarmuka pengguna.
 
-Dalam MVT, View yang menjembatani antara data yang akan diambil dalam Model dan akan ditampiljan di Template.
+Dalam MVT, View yang menjembatani antara data yang akan diambil dalam Model dan akan ditampilkan di Template.
 
 **MVC**
 
