@@ -26,17 +26,19 @@ django-admin startproject salmathlon .
 Setelah membuat proyek, tambahkan host yang diizinkan untuk mengakses aplikasi web agar aplikasi dapat diakses secara luas
 
 
-3. Buat aplikasi main pada proyek `salmathlon` dengan perintah
+3. Buat aplikasi bernama main pada proyek `salmathlon` dengan perintah
  ```
 python manage.py startapp main
  ``` 
 Setelah aplikasi main dibuat, tambahkan `main` ke daftar aplikasi yang ada dalam direktori proyek salmathlon agar aplikasi dapat dijalankan.
 
-4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut <img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/d5300457-03f0-447a-8223-66e40ed2fc15">
+4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut 
 
+<img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/d5300457-03f0-447a-8223-66e40ed2fc15">
 
-5. Membuat model sebagai berikut <img width="373" alt="Screenshot 2023-09-12 120759" src="https://github.com/slmnrl/salmathlon/assets/124946381/dcffd4cf-a2c1-46af-b3ff-06df809eb42f">
-
+5. Membuat model sebagai berikut
+   
+<img width="373" alt="Screenshot 2023-09-12 120759" src="https://github.com/slmnrl/salmathlon/assets/124946381/dcffd4cf-a2c1-46af-b3ff-06df809eb42f">
 
 Nama model yang didefinisikan adalah Product dengan atribut `name`, `amount`, dan `description`.
 Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah struktur tabel basis data yang sesuai dengan perintah
@@ -45,16 +47,20 @@ Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah strukt
 python manage.py makemigrations
 python manage.py migrate
 ```
-6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html <img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/6b9a0225-84cb-4399-8915-3afea53f06d0">
+6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html 
 
+<img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/6b9a0225-84cb-4399-8915-3afea53f06d0">
 
-7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`<img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/caa3750f-9d3a-4495-8642-7f9a3d1530e9">
+7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`
 
+<img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/caa3750f-9d3a-4495-8642-7f9a3d1530e9">
 
-8. Konfigurasi routing url proyek <img width="324" alt="Screenshot 2023-09-12 121935" src="https://github.com/slmnrl/salmathlon/assets/124946381/eec43013-7a1e-4435-b990-de8d8a8cce89">
+8. Konfigurasi routing url proyek 
 
+<img width="324" alt="Screenshot 2023-09-12 121935" src="https://github.com/slmnrl/salmathlon/assets/124946381/eec43013-7a1e-4435-b990-de8d8a8cce89">
 
 9. Unggah proyek ke repositori GitHub dengan nama salmathlon dan membuat berkas `.gitignore` untuk konfigurasi yang digunakan dalam repositori Git
+
 10. Membuat aplikasi di Adaptable bernama salmathlon dan menyambungkannya dengan GitHub
 
 ## Bagan Request Client dan Respon
