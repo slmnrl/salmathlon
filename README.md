@@ -1,13 +1,71 @@
-Nama    : Salma Nurul Aziz
-NPM     : 2206028661
-Kelas   : PBP C
+### Nama    : Salma Nurul Aziz
+
+### NPM     : 2206028661
+
+### Kelas   : PBP C
 
 Welcome to salmathlon page
+
 Link: https://salmathlon.adaptable.app/main/
 
-Implementasi Proyek
+
+
+### Implementasi Proyek
 1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda.
 
 Dependencies dapat disiapkan dalam file requirements.txt berikut
 
-![DEPENDENCIES](../imgTUGAS2/Screenshot%202023-09-10%20213132.png)
+<img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/ffc74cf7-1344-4237-b110-bc644697d796">
+
+Kemudian, pasang dependencies yang telah disiapkan dengan perintah
+```
+pip install -r requirements.txt
+```
+
+2. Buat proyek Django bernama `salmathlon` dengan perintah 
+```
+django-admin startproject salmathlon .
+```
+Setelah membuat proyek, tambahkan host yang diizinkan untuk mengakses aplikasi web agar aplikasi dapat diakses secara luas
+
+3. Buat aplikasi main pada proyek `salmathlon` dengan perintah
+ ```
+python manage.py startapp main
+ ``` 
+Setelah aplikasi main dibuat, tambahkan `main` ke daftar aplikasi yang ada dalam direktori proyek salmathlon agar aplikasi dapat dijalankan.
+
+4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut
+
+<img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/115460a2-8fa6-4d45-a184-b742f6a8bf89">
+
+5. Membuat model sebagai berikut
+<img width="373" alt="Screenshot 2023-09-12 120759" src="https://github.com/slmnrl/salmathlon/assets/124946381/50ff6840-f49e-4a07-a7f0-87e596278511">
+
+Nama model yang didefinisikan adalah Product dengan atribut `name`, `amount`, dan `description`.
+Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah struktur tabel basis data yang sesuai dengan perintah
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html
+<img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/f2917dc8-2e91-453c-b368-5bacc3a2805f">
+
+7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`
+<img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/b16dcbe7-4c73-4871-88ee-f6c55a954d24">
+
+8. Konfigurasi routing url proyek
+<img width="324" alt="Screenshot 2023-09-12 121935" src="https://github.com/slmnrl/salmathlon/assets/124946381/246a1087-bfe8-49ee-a86f-d82f02b8e788">
+
+9. Unggah proyek ke repositori GitHub dengan nama salmathlon dan membuat berkas `.gitignore` untuk konfigurasi yang digunakan dalam repositori Git
+10. Membuat aplikasi di Adaptable bernama salmathlon dan menyambungkannya dengan GitHub
+
+### Penggunaan Virtual Environment
+Virtual environment digunakan untuk mengisolasi package serta dependencies dari proyek yang berbeda yang ada di komputer sehingga tidak bertabrakan dengan versi lain yang ada. Kita dapat tetap membuat aplikasi web berbasis Django tanpa menggunakan _virtual environment_ jika hanya dilakukan di dalam lingkungan local server. Pengguna dapat hanya dengan menggunakan environment Python bawaan dari komputer (root) untuk menginstal dependensi yang dibutuhkan proyek Django sehingga proyek Django dapat berjalan di server "local". Namun, jika untuk dijalankan di online hoster hal ini cukup susah dilakukan karena server host akan mencari daftar dependensi yang ada di dalam "requirements.txt" untuk disesuaikan dengan paket dependensi yang dimiliki mesin hosting. Jika "requirements.txt" tidak ada karena tidak diinisialisasikan virtual environmentnya, maka mesin host tidak pernah tahu dependensi apa saja yang diperlukan untuk menjalankan server sehingga proyek juga tidak akan berjalan.
+
+### MVC, MVT, MVVM
+
+
+
+
+
