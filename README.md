@@ -11,22 +11,18 @@ Link: https://salmathlon.adaptable.app/main/
 
 
 ### Implementasi Proyek
-1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda.
-
-Dependencies dapat disiapkan dalam file requirements.txt berikut
-
-<img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/ffc74cf7-1344-4237-b110-bc644697d796">
-
-Kemudian, pasang dependencies yang telah disiapkan dengan perintah
+1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda.Dependencies dapat disiapkan dalam file requirements.txt berikut
+<img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/ffc74cf7-1344-4237-b110-bc644697d796">Kemudian, pasang dependencies yang telah disiapkan dengan perintah
 ```
 pip install -r requirements.txt
 ```
 
-2. Buat proyek Django bernama `salmathlon` dengan perintah 
+2. Buat proyek Django bernama `salmathlon` dengan perintah
 ```
 django-admin startproject salmathlon .
 ```
 Setelah membuat proyek, tambahkan host yang diizinkan untuk mengakses aplikasi web agar aplikasi dapat diakses secara luas
+
 
 3. Buat aplikasi main pada proyek `salmathlon` dengan perintah
  ```
