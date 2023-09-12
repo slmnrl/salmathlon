@@ -13,6 +13,7 @@ Link: https://salmathlon.adaptable.app/main/
 ### Implementasi Proyek
 1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda.Dependencies dapat disiapkan dalam file requirements.txt berikut
 <img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/ffc74cf7-1344-4237-b110-bc644697d796">
+
 Kemudian, pasang dependencies yang telah disiapkan dengan perintah
 ```
 pip install -r requirements.txt
@@ -31,11 +32,9 @@ python manage.py startapp main
  ``` 
 Setelah aplikasi main dibuat, tambahkan `main` ke daftar aplikasi yang ada dalam direktori proyek salmathlon agar aplikasi dapat dijalankan.
 
-4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut
-<img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/115460a2-8fa6-4d45-a184-b742f6a8bf89">
+4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut<img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/115460a2-8fa6-4d45-a184-b742f6a8bf89">
 
-5. Membuat model sebagai berikut
-<img width="373" alt="Screenshot 2023-09-12 120759" src="https://github.com/slmnrl/salmathlon/assets/124946381/50ff6840-f49e-4a07-a7f0-87e596278511">
+5. Membuat model sebagai berikut<img width="373" alt="Screenshot 2023-09-12 120759" src="https://github.com/slmnrl/salmathlon/assets/124946381/50ff6840-f49e-4a07-a7f0-87e596278511">
 
 Nama model yang didefinisikan adalah Product dengan atribut `name`, `amount`, dan `description`.
 Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah struktur tabel basis data yang sesuai dengan perintah
