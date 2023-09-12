@@ -47,14 +47,17 @@ Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah strukt
 python manage.py makemigrations
 python manage.py migrate
 ```
-6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html <img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/6b9a0225-84cb-4399-8915-3afea53f06d0">
+6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html 
 
+<img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/6b9a0225-84cb-4399-8915-3afea53f06d0">
 
-7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`<img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/caa3750f-9d3a-4495-8642-7f9a3d1530e9">
+7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`
 
+<img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/caa3750f-9d3a-4495-8642-7f9a3d1530e9">
 
-8. Konfigurasi routing url proyek <img width="324" alt="Screenshot 2023-09-12 121935" src="https://github.com/slmnrl/salmathlon/assets/124946381/eec43013-7a1e-4435-b990-de8d8a8cce89">
+8. Konfigurasi routing url proyek 
 
+<img width="324" alt="Screenshot 2023-09-12 121935" src="https://github.com/slmnrl/salmathlon/assets/124946381/eec43013-7a1e-4435-b990-de8d8a8cce89">
 
 9. Unggah proyek ke repositori GitHub dengan nama salmathlon dan membuat berkas `.gitignore` untuk konfigurasi yang digunakan dalam repositori Git
 
