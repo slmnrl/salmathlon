@@ -12,7 +12,8 @@ Link: https://salmathlon.adaptable.app/main/
 
 ### Implementasi Proyek
 1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda.Dependencies dapat disiapkan dalam file requirements.txt berikut
-<img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/ffc74cf7-1344-4237-b110-bc644697d796">Kemudian, pasang dependencies yang telah disiapkan dengan perintah
+<img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/ffc74cf7-1344-4237-b110-bc644697d796">
+Kemudian, pasang dependencies yang telah disiapkan dengan perintah
 ```
 pip install -r requirements.txt
 ```
@@ -31,7 +32,6 @@ python manage.py startapp main
 Setelah aplikasi main dibuat, tambahkan `main` ke daftar aplikasi yang ada dalam direktori proyek salmathlon agar aplikasi dapat dijalankan.
 
 4. Karena dalam proyek ini kita menggunakan konsep MVT, perlu dibuat template  yang nantinya akan dihubungkan ke views. Berkas yang akan menjadi template adalah `main.html` sebagai berikut
-
 <img width="334" alt="Screenshot 2023-09-12 113551" src="https://github.com/slmnrl/salmathlon/assets/124946381/115460a2-8fa6-4d45-a184-b742f6a8bf89">
 
 5. Membuat model sebagai berikut
@@ -44,8 +44,7 @@ Model yang telah didefinisikan ini harus dilakukan migrasi untuk mengubah strukt
 python manage.py makemigrations
 python manage.py migrate
 ```
-6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html
-<img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/f2917dc8-2e91-453c-b368-5bacc3a2805f">
+6. Membuat fungsi `show_main` yang digunakan untuk mengambil data dari model dan dikembalikan ke template html<img width="362" alt="Screenshot 2023-09-12 121412" src="https://github.com/slmnrl/salmathlon/assets/124946381/f2917dc8-2e91-453c-b368-5bacc3a2805f">
 
 7. Membuat sebuah routing untuk konfigurasi URL aplikasi `main`
 <img width="317" alt="Screenshot 2023-09-12 121742" src="https://github.com/slmnrl/salmathlon/assets/124946381/b16dcbe7-4c73-4871-88ee-f6c55a954d24">
