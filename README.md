@@ -61,7 +61,7 @@ python manage.py migrate
 10. Membuat aplikasi di Adaptable bernama salmathlon dan menyambungkannya dengan GitHub
 
 ### Bagan Request Client dan Respon
-![BAGAN](https://github.com/slmnrl/salmathlon/assets/124946381/81e2a7b8-99ad-4046-8884-44d9d8af24eb)
+![bagan](https://github.com/slmnrl/salmathlon/assets/124946381/e3b206a9-bd8a-4920-9bd1-7f8e9f5680ab)
 1. Client membuat HTTP request ke URL tertentu di aplikasi Django
 2. Aplikasi Django menerima Request
 3. Aplikasi Django akan mencocokkan URL yang diterima dengan pola yang didefinisikan dalam berkas urls.py
