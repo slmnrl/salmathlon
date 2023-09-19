@@ -250,7 +250,7 @@ def show_json_by_id(request, id):
 ```
 Sama seperti fungsi-fungsi di atas, fungsi ini akan mengembalikan data dalam format JSON, namun data yang dikembalikan hanyalah data sesuai id yang diminta. 
 
-## MEMBUANG ROUTING URL UNTUK FUNGSI YANG ADA DI VIEWS
+## MEMBUAT ROUTING URL UNTUK FUNGSI YANG ADA DI VIEWS
 Setelah fungsi-fungsi tersebut dibuat, tambahkan path url fungsi yang ditambahkan ke dalam `urlpatterns` yang ada di `urls.py` pada direktori `main` agar fungsi tersebut dapat diakses.
 ```
 from django.urls import path
@@ -270,3 +270,18 @@ urlpatterns = [
 
 ## MENGAKSES URL DENGAN POSTMAN
 
+<img width="407" alt="Screenshot 2023-09-19 131433" src="https://github.com/slmnrl/salmathlon/assets/124946381/15a62ed3-b302-4a8d-ab87-f6d7c8923b9c">
+
+<img width="408" alt="Screenshot 2023-09-19 131450" src="https://github.com/slmnrl/salmathlon/assets/124946381/353af7a6-0fdb-42a8-9dee-964ceacb9835">
+
+<img width="420" alt="Screenshot 2023-09-19 144852" src="https://github.com/slmnrl/salmathlon/assets/124946381/aecafd4c-6b6e-4d7c-a1c0-bcaf177e9101">
+
+<img width="421" alt="Screenshot 2023-09-19 150030" src="https://github.com/slmnrl/salmathlon/assets/124946381/d2cf1b69-ddb8-4ec1-9cd5-582844dd6df8">
+
+<img width="629" alt="Screenshot 2023-09-19 150109" src="https://github.com/slmnrl/salmathlon/assets/124946381/4afe4eee-f35e-4bb7-aeb0-0b6a6ffee4ab">
+
+<img width="617" alt="Screenshot 2023-09-19 150122" src="https://github.com/slmnrl/salmathlon/assets/124946381/b343d595-1287-469e-a7b7-01d9387bdac3">
+
+<img width="617" alt="Screenshot 2023-09-19 150134" src="https://github.com/slmnrl/salmathlon/assets/124946381/001cd45f-cbf6-4701-94d6-68f484f64a91">
+
+<img width="620" alt="Screenshot 2023-09-19 150142" src="https://github.com/slmnrl/salmathlon/assets/124946381/9580aaff-0996-40fa-90e8-bab9e989b5ba">
