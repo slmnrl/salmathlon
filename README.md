@@ -270,3 +270,4 @@ urlpatterns = [
 
 ## MENGAKSES URL DENGAN POSTMAN
 
+## DJANGO `UserCreationForm`
