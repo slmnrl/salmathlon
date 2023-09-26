@@ -89,7 +89,7 @@ View: Menampilkan data dari model dan menghubungkannya dengan template.
 
 Template: Menentukan tampilan antarmuka pengguna.
 
-Dalam MVT, View yang menjembatani antara data yang akan diambil dalam Model dan akan ditampiljan di Template.
+Dalam MVT, View yang menjembatani antara data yang akan diambil dalam Model dan akan ditampilkan di Template.
 
 **MVC**
 
@@ -250,7 +250,7 @@ def show_json_by_id(request, id):
 ```
 Sama seperti fungsi-fungsi di atas, fungsi ini akan mengembalikan data dalam format JSON, namun data yang dikembalikan hanyalah data sesuai id yang diminta. 
 
-## MEMBUANG ROUTING URL UNTUK FUNGSI YANG ADA DI VIEWS
+## MEMBUAT ROUTING URL UNTUK FUNGSI YANG ADA DI VIEWS
 Setelah fungsi-fungsi tersebut dibuat, tambahkan path url fungsi yang ditambahkan ke dalam `urlpatterns` yang ada di `urls.py` pada direktori `main` agar fungsi tersebut dapat diakses.
 ```
 from django.urls import path
@@ -269,5 +269,3 @@ urlpatterns = [
 ```
 
 ## MENGAKSES URL DENGAN POSTMAN
-
-## DJANGO `UserCreationForm`
