@@ -269,3 +269,11 @@ urlpatterns = [
 ```
 
 ## MENGAKSES URL DENGAN POSTMAN
+<img width="407" alt="1" src="https://github.com/slmnrl/salmathlon/assets/124946381/60b601d6-2741-46b9-b4ee-dc2f4f140d56">
+<img width="408" alt="2" src="https://github.com/slmnrl/salmathlon/assets/124946381/314d9c8d-8154-4e81-bcdc-95e86f02591a">
+<img width="420" alt="3" src="https://github.com/slmnrl/salmathlon/assets/124946381/49abd4a9-973c-43db-a7f1-011f18ea135c">
+<img width="421" alt="4" src="https://github.com/slmnrl/salmathlon/assets/124946381/19486b5e-2980-42e3-9888-4acd82df9fc6">
+<img width="629" alt="5" src="https://github.com/slmnrl/salmathlon/assets/124946381/9f0deb04-ffde-4c44-b0fc-7daf1f254287">
+<img width="617" alt="6" src="https://github.com/slmnrl/salmathlon/assets/124946381/8dc60dfb-f7f0-4b1e-a4f2-26678a2c3584">
+<img width="617" alt="7" src="https://github.com/slmnrl/salmathlon/assets/124946381/9e1c5226-f52f-4139-90a6-4ccc182cfd7e">
+<img width="620" alt="8" src="https://github.com/slmnrl/salmathlon/assets/124946381/df4363c0-8ad5-4100-884f-b3519c2a489d">
