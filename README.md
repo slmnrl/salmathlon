@@ -492,7 +492,34 @@ def show_main(request):
 ...
 ```
 
-6. Menampilkan detail informasi pengguna yang sedang login
-<img width="479" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/792fd226-28fd-4cf9-a2ba-7da0349240e4">
-<img width="479" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/4747e9e7-c367-43ea-8f42-79ab825db224">
-<img width="475" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/de4d6277-6d11-4e34-9a6d-487229ed25b5">
+8. Membuat fungsi increment, decrement dan hapus item
+Agar item yang sudah diteambah bisa diubah amount nya, makan kita membuat fungsi increment, decrement dan hapus item dalam `views.py`
+@login_required(login_url='/login')
+def increment_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id, user=request.user)
+    item.amount += 1
+    item.save()
+    return redirect('main:show_main')
+
+@login_required(login_url='/login')
+def decrement_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id, user=request.user)
+    if item.amount > 0:
+        item.amount -= 1
+        item.save()
+    return redirect('main:show_main')
+
+@login_required(login_url='/login')
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id, user=request.user)
+    item.delete()
+    return redirect('main:show_main')
+
+Setelah fungsi tersebut dibuat, tambahkan fungsi ke `urls.py` dan path url nya agar fungsi dapat diakses
+
+9. Menambahkan button increment, decrement dan hapus dalam `main.html` dan mengatur letak serta tampilan button tersebut
+
+10. Menampilkan detail informasi pengguna yang sedang login
+<img width="329" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/7293cc10-c3ea-4e84-aff4-9f78d42b46df">
+<img width="322" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/64123c97-5bcb-4ca6-843c-e5a4fa080e72">
+
