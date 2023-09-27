@@ -1,6 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+        /* Add this CSS to your stylesheet or <style> tag in your HTML */
+
+        .amount-cell {
+            display: flex;
+            align-items: center; /* Vertically center the buttons and amount */
+        }
+
+        .increment-button,
+        .decrement-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-right: 5px; /* Add some space between buttons */
+        }
+
+        .amount {
+            font-weight: bold;
+            margin: 0 5px; /* Add some space between amount and buttons */
+        }
+
+        /* Add this CSS to your stylesheet or <style> tag in your HTML */
+
+        .delete-button {
+            background-color: #ff0000; /* Red background color for the delete button */
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+    </style>
+
     <h1>salmathlon Page</h1>
 
     <h5>Name:</h5>
@@ -12,22 +47,38 @@
     <table>
         <tr>
             <th>Name</th>
-            <th>Price</th>
+            <th>Amount</th>
             <th>Description</th>
         </tr>
 
         {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
         {% for item in items %}
-            <tr>
-                <td>{{item.name}}</td>
-                <td>{{item.amount}}</td>
-                <td>{{item.description}}</td>
-            </tr>
-        {% endfor %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td class="amount-cell">
+                <form method="post" action="{% url 'main:increment_item' item.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="increment-button">+</button>
+                </form>
+                <span class="amount">{{ item.amount }}</span>
+                <form method="post" action="{% url 'main:decrement_item' item.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="decrement-button">-</button>
+                </form>
+            </td>
+            <td>{{ item.description }}</td>
+            <td>
+                <form method="post" action="{% url 'main:delete_item' item.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </td>
+        </tr>    
+    {% endfor %}
     </table>
 
-    <br />
+    <br/>
 
     <h5>Sesi terakhir login: {{ last_login }}</h5>
         

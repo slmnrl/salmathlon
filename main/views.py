@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from main.forms import ProdutForm
 from django.urls import reverse
@@ -20,11 +20,32 @@ def show_main(request):
         'name': 'Salma Nurul Aziz', # Nama kamu
         'class': 'PBP C', # Kelas PBP kamu
         'items': items,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': request.COOKIES.get('last_login'),
         'name': request.user.username,
     }
 
     return render(request, "main.html", context)
+
+@login_required(login_url='/login')
+def increment_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id, user=request.user)
+    item.amount += 1
+    item.save()
+    return redirect('main:show_main')
+
+@login_required(login_url='/login')
+def decrement_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id, user=request.user)
+    if item.amount > 0:
+        item.amount -= 1
+        item.save()
+    return redirect('main:show_main')
+
+@login_required(login_url='/login')
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id, user=request.user)
+    item.delete()
+    return redirect('main:show_main')
 
 def create_product(request):
     form = ProdutForm(request.POST or None)
