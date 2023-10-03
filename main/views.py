@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
-from main.forms import ProdutForm
+from main.forms import ProductForm
 from django.urls import reverse
 from main.models import Item
 from django.core import serializers
@@ -17,8 +17,8 @@ def show_main(request):
     items = Item.objects.filter(user=request.user)
 
     context = {
-        'name': 'Salma Nurul Aziz', # Nama kamu
-        'class': 'PBP C', # Kelas PBP kamu
+        'name': 'Salma Nurul Aziz', 
+        'class': 'PBP C', 
         'items': items,
         'last_login': request.COOKIES.get('last_login'),
         'name': request.user.username,
@@ -48,7 +48,7 @@ def delete_item(request, item_id):
     return redirect('main:show_main')
 
 def create_product(request):
-    form = ProdutForm(request.POST or None)
+    form = ProductForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
         product = form.save(commit=False)
@@ -107,3 +107,17 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+def edit_product(request, id):
+    # Get product berdasarkan ID
+    item = Item.objects.get(pk = id)
+
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=item)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)

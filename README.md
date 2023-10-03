@@ -523,3 +523,32 @@ Setelah fungsi tersebut dibuat, tambahkan fungsi ke `urls.py` dan path url nya a
 <img width="329" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/7293cc10-c3ea-4e84-aff4-9f78d42b46df">
 <img width="322" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/64123c97-5bcb-4ca6-843c-e5a4fa080e72">
 
+## MANFAAT SETIAP ELEMENT SELECTOR DAN PENGGUNAANNYA
+1. Simple selectors: Memilih elemen berdasarkan nama, id, class, dll.
+2. Combinator selectors: Memilih elemen berdasarkan hubungan khusus di antara mereka
+3. Pseudo-class selectors: Memilih elemen berdasarkan kondisi tertentu
+4. Pseudo-element selectors: Memilih dan mengatur tampilan bagian dari elemen
+5. Attribute selectors: Memilih elemen berdasarkan attribute atau attribute value
+
+## HTML 5 TAG
+Saya akan memberikan beberapa contoh tag HTML 5:
+1. <audio>: Untuk insert audio ke halaman web
+2. <video>: Untuk insert video ke halaman web
+3. <object>: Untuk insert object tertebtu, seperti aplikasi multimedia ke dalam halaman web
+4. <abbr>: Untuk menandai singakatan dalam web
+5. <ul>: ul merupakan singkatan dari unordered list. Digunakan untuk membuat daftar tak terurut dalam halaman web
+
+## PERBEDAAN MARGIN DAN PADDING
+Margin mengatur jarak batas antara batas luar elemen dengan elemen lain. Sedangkan padding mengatur jarak antara margin dengan konten elemen itu sendiri.Jadi margin mengatur ruang di sekitar elemen dan padding mengatur ruang di dalam elemen.
+
+## PERBEDAAN CSS TAILWIND DAN BOOTSTRAP SERTA PENGGUNAANNYA
+
+
+Tailwind biasa digunakan ketika ingin melakukan kustomisasi tingkat tinggi karena kelas-kelas utilitas dapat didefinisikan sendiri. Jika ingin melakukan pengembangan yang cepat, sebaiknya gunakan bootstrap karena bootstrap menyediakan desain bawaan.
+
+## IMPLEMENTASI STEP BY STEP
+1. Menambahkan bootstrap dan css pada base.html
+2. Membuat fungsi baru, yaitu edit_product pada views.py agar item yang telah ditambahkan dapat diedit lalu melakukan routing dengan menambahkan url ke urls.py
+3. Membuat file html baru yaitu edit_product.html yang berfungsi sebagai form edit product
+4. Kustomisasi halaman login dengan menggunakan Card Bootstrap
+5. Kustomisasi halaman inventori dengan menggunakan Card Bootstrap sehingga setiap item yang ada di database user yang telah melakukan login ditampilkan di setiap Card.
