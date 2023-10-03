@@ -532,17 +532,17 @@ Setelah fungsi tersebut dibuat, tambahkan fungsi ke `urls.py` dan path url nya a
 
 ## HTML 5 TAG
 Saya akan memberikan beberapa contoh tag HTML 5:
-1. <audio>: Untuk insert audio ke halaman web
-2. <video>: Untuk insert video ke halaman web
-3. <object>: Untuk insert object tertebtu, seperti aplikasi multimedia ke dalam halaman web
-4. <abbr>: Untuk menandai singakatan dalam web
-5. <ul>: ul merupakan singkatan dari unordered list. Digunakan untuk membuat daftar tak terurut dalam halaman web
+1. `<audio>`: Untuk insert audio ke halaman web
+2. `<video>`: Untuk insert video ke halaman web
+3. `<object>`: Untuk insert object tertebtu, seperti aplikasi multimedia ke dalam halaman web
+4. `<abbr>`: Untuk menandai singakatan dalam web
+5. `<ul>`: ul merupakan singkatan dari unordered list. Digunakan untuk membuat daftar tak terurut dalam halaman web
 
 ## PERBEDAAN MARGIN DAN PADDING
 Margin mengatur jarak batas antara batas luar elemen dengan elemen lain. Sedangkan padding mengatur jarak antara margin dengan konten elemen itu sendiri.Jadi margin mengatur ruang di sekitar elemen dan padding mengatur ruang di dalam elemen.
 
 ## PERBEDAAN CSS TAILWIND DAN BOOTSTRAP SERTA PENGGUNAANNYA
-
+<img width="433" alt="Screenshot 2023-10-03 130140" src="https://github.com/slmnrl/salmathlon/assets/124946381/a99c0c61-e81e-45a9-815f-eab828634d38">
 
 Tailwind biasa digunakan ketika ingin melakukan kustomisasi tingkat tinggi karena kelas-kelas utilitas dapat didefinisikan sendiri. Jika ingin melakukan pengembangan yang cepat, sebaiknya gunakan bootstrap karena bootstrap menyediakan desain bawaan.
 
