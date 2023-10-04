@@ -6,12 +6,12 @@
 
 {% block content %}
 <body>
-    <section class = "container" style=" background-image: url('https://i.ibb.co/hDRSmNr/SALMA.png'); background-size: cover; background-position: center;">
+    <section class = "container" style=" background-image: url('https://i.postimg.cc/wjShNrR5/Untitled-design-2.png'); background-size: cover; background-position: center;">
         <div class="container mt-3">
             <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header text-center text-bold">Login</div>
+                        <div class="card-header text-center text-bold" style=" background-color: #cfe0eb">Login</div>
                         <div class="card-body">
                             <form method="post" action="{% url 'main:login' %}">
                                 {% csrf_token %}
@@ -26,7 +26,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer text-center">
+                        <div class="card-footer text-center" style=" background-color: #cfe0eb">
                             <p>Don't have an account? <a href="{% url 'main:register' %}">Register</a></p>
                         </div>
                     </div>
