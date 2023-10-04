@@ -524,11 +524,11 @@ Setelah fungsi tersebut dibuat, tambahkan fungsi ke `urls.py` dan path url nya a
 <img width="322" alt="image" src="https://github.com/slmnrl/salmathlon/assets/124946381/64123c97-5bcb-4ca6-843c-e5a4fa080e72">
 
 ## MANFAAT SETIAP ELEMENT SELECTOR DAN PENGGUNAANNYA
-1. Simple selectors: Memilih elemen berdasarkan nama, id, class, dll.
-2. Combinator selectors: Memilih elemen berdasarkan hubungan khusus di antara mereka
-3. Pseudo-class selectors: Memilih elemen berdasarkan kondisi tertentu
-4. Pseudo-element selectors: Memilih dan mengatur tampilan bagian dari elemen
-5. Attribute selectors: Memilih elemen berdasarkan attribute atau attribute value
+1. ID Selector (`#id`): Memilih elemen berdasarkan ID unik, memberikan style khusus pada elemen tertentu
+2. Universal Selector (`*`): Memilih semua elemen dalam dokumen dan memberikan style secara global pada seluruh dokumen
+3. Type Selector (`element`): Mengidentifikasi dan memilih semua elemen dari jenis tertentu, seperti paragraf (p), untuk memberikan style pada elemen-elemen sejenis
+4. Descendant Selector (`ancestor descenddant`): Memilih semua elemen yang merupakan turunan dari elemen tertentu, seperti child atau grandchild untuk membatasi pemilihan pada elemen yang beradadalam hierarki tertentu
+5. Child Selector (parent > child): Memilih elemen child langsung dari elemen parent tertentu untuk membatasi pemilihan hanya pada elemen child yang bberada langsung di bawah elemen parent
 
 ## HTML 5 TAG
 Saya akan memberikan beberapa contoh tag HTML 5:
