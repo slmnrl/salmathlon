@@ -6,7 +6,7 @@
 
 Welcome to salmathlon page
 
-Link: https://salmathlon.adaptable.app/main/
+Link: http://salma-nurul21-tugas.pbp.cs.ui.ac.id
 
 ## Implementasi Proyek
 1. Untuk membuat proyek Django, diperlukan dependencies, yaitu modul yang diperlukan oleh perangkat lunak untuk berfungsi, yang isinya berupa library, framework, atau package. Penggunaan Dependencies ini memerlukan manajemen yang hati-hati, oleh karena itu diperlukan virtual environment untuk mengisolasi dependencies proyek yang berbeda. Dependencies dapat disiapkan dalam file requirements.txt berikut <img width="424" alt="Screenshot 2023-09-10 213132" src="https://github.com/slmnrl/salmathlon/assets/124946381/00f4c70a-556e-4e73-bdc3-c35acf02d45f">
