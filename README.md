@@ -552,3 +552,174 @@ Tailwind biasa digunakan ketika ingin melakukan kustomisasi tingkat tinggi karen
 3. Membuat file html baru yaitu edit_product.html yang berfungsi sebagai form edit product
 4. Kustomisasi halaman login dengan menggunakan Card Bootstrap
 5. Kustomisasi halaman inventori dengan menggunakan Card Bootstrap sehingga setiap item yang ada di database user yang telah melakukan login ditampilkan di setiap Card.
+
+
+# TUGAS 6
+
+## PERBEDAAN SYNCHRONOUS DAN ASYNCHRONOUS PROGRAMMING
+Synchronous Programming: Teknik di mana komputer melakukan tasks yang ada secara sequential, jadi hanya dapat melakukan satu task dalam satu waktu sebelum melakukan task lainnya. Dalam konteks pemrograman web, sebelum semua tasks selesai dilakukan, aplikasi akan unresponsive.
+
+Asynchronous programming: Teknik di mana komputer melakukan banyak tasks dalam satu waktu yang sama. Aplikasi yang dijalankan bersifat responsive karena beberapa tasks dapat berjalan dalam satu waktu.
+
+## JAVASCRIPT DAN AJAX EVENT-DRIVEN PROGRAMMING
+Event-Driven Programming memungkinkan suatu tasks dapat terpicu ketika suatu peristiwa terjadi tanpa mencegah tasks lain untuk dieksekusi. Ini memungkinkan halaman web yang bersifat responsive dan interaktif. Dengan mengatur event listeners dan callback dengan JavaScript, Even-Driven Programming dapat membantu eksekusi kode secara asynchronus. Salah satu contoh penerapannya dalam tugas ini adalah Button Add Product dalam modals yang jika diklik akan menyimpan menyimpan data yang sudah dimasukkan dalam field yang tersedia jika data yang dimasukkan benar.
+
+## PENERAPAN ASYNCHRONOUS PROGRAMMING PADA AJAX
+AJAX menggunakan fungsi JavaScript untuk membuat object XMLHttpRequest pada peramban. Lalu, AJAX mengumpulkan informasi halaman dalam format XML yang telah dikirimkan oleh object XMLHttpRequest ke web server. Web server memproses request dan merespons dengan data yang diminta. Kemudian, peramban akan memperbarui layar saat ini dengan data terbaru tanpa harus dilakukan refresh halaman.
+
+## PERBANDINGAN TEKNOLOGI FETCH API DAN LIBRARY JQUERY
+Fetch API
+- Menyediakan interface untuk mengambil sumber daya
+- Pengganti yang lebih kuat dan fleksibel untuk XMLHttpRequest
+- Mendukung lebih banyak metode HTTP
+- Tidak mendukung pada browser yang belum mendukung ECMASript 6
+- Lebih ringan
+
+
+Library jQuery
+- Lebih besar
+- Memiliki lebih banyak fitur
+- Memiliki dukungan yang lebih baik untuk keperluan kustomisasi AJAX request dan error handling
+
+Jika ingin berfokus pada pengembangan yang lebih modern, ringan, dan lebih tidak kompleks lebih baik menggunakan Fetch API. Sebaliknya, jika ingin versi yang lebih tidak modern karena browser yang digunakan tidak mendukung, atau pun ingin request yang lebih kompleks bisa menggunakan jQuery.
+
+## IMPLEMENTASI STEP BY STEP
+1. Menambahkan fungsi get_product_json yang berfungsi untuk mengembalikan data dalam bentuk JSON kemudian melakukan routing dengan menambahkan path di urls.py
+```
+def get_product_json(request):
+    product_item = Item.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+```
+2. Menambahkan script untuk menampilkan product dengan AJAX_GET
+```
+<script>
+...
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+...
+</script>
+```
+3. Membuat fungsi refreshItems di dalam script agar isi dari inventori ter-update setiap ada perubahan tanpa perlu di refresh dan mengatur tampilan card di dalam script
+```
+<script>
+...
+    async function refreshProducts() {
+        document.getElementById("product_container").innerHTML = ""
+        const products = await getProducts()
+
+        products.forEach((item) => {
+        const card = document.createElement("div");
+        card.classList.add("custom-card");
+
+        const name = document.createElement("h4");
+        name.textContent = item.fields.name;
+
+        const amount = document.createElement("p");
+        amount.textContent = `Amount: ${item.fields.amount}`;
+
+        const description = document.createElement("p");
+        description.textContent = item.fields.description;
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.classList.add("edit-button");
+        editButton.addEventListener("click", () => {
+            window.location.href = `edit-product/${item.pk}`;
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click", () => {
+            window.location.href = `delete/${item.pk}`;
+        });
+
+        card.appendChild(name);
+        card.appendChild(amount);
+        card.appendChild(description);
+        card.appendChild(editButton);
+        card.appendChild(deleteButton);
+
+        document.getElementById("product_container").appendChild(card);
+        });
+    }
+
+    refreshProducts();
+...
+</script>
+```
+4. Membuat button yang berfungsi untuk menambahkan item
+5. Button tersebut ketika di klik akan mengeluarkan modals yang berisi form untuk add item baru
+```
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="number" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+6. Agar item yang di add dapat tersimpan, buat fungsi baru bernama create_ajax pada views.py dan melakukan routing dengan menambahkan path di urls.py
+```
+@csrf_exempt
+def create_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        description = request.POST.get("description")
+        user = request.user
+        new_product = Item(name=name, amount=amount, description=description, user=user)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+```
+7. Tambahkan juga fungsi addItem di dalam script agar modal terhubung dengan path yang sudah ditambahkan.
+```
+<script>
+...
+    function addProduct() {
+        fetch("{% url 'main:create_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset();
+        return false;
+    }
+
+    document.getElementById("button_add").onclick = addProduct;
+</script>
+...
+</script>
+```
+8. Melakukanperintah collectstatic di terminal dengan command berikut
+```
+python manage.py collectstatic
+```
