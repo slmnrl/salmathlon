@@ -68,6 +68,7 @@ def delete_item(request, item_id):
     item.delete()
     return redirect('main:show_main')
 
+@csrf_exempt
 def create_product(request):
     form = ProductForm(request.POST or None)
 
@@ -96,6 +97,7 @@ def show_json_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+@csrf_exempt
 def register(request):
     form = UserCreationForm()
 
