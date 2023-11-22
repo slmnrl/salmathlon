@@ -23,10 +23,9 @@ def create_product_flutter(request):
         new_product = Item.objects.create(
             user = request.user,
             name = data["name"],
-            price = int(data["price"]),
+            amount = int(data["amount"]),
             description = data["description"]
         )
-
         new_product.save()
 
         return JsonResponse({"status": "success"}, status=200)
@@ -97,7 +96,6 @@ def show_json_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
-@csrf_exempt
 def register(request):
     form = UserCreationForm()
 
@@ -110,7 +108,6 @@ def register(request):
     context = {'form':form}
     return render(request, 'register.html', context)
 
-@csrf_exempt
 def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
